@@ -15,4 +15,13 @@ struct OrderData
 	int number;
 	int accountNumber;
 	std::string name;
+
+	void Print()
+	{
+		if (deal == BUY)
+			printf("BUY ");
+		else
+			printf("SELL ");
+		printf("%f %d %d %s\n", price, number, accountNumber, name.c_str());
+	}
 };

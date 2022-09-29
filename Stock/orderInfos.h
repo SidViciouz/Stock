@@ -4,8 +4,9 @@
 
 class OrderInfos
 {
-	std::vector<OrderInfo*> orderInfos;
+	std::vector<OrderInfo*> orderInfos_;
 	
 public:
 	void Make(int orderOwner, int number);
+	void Print();
 };

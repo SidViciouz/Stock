@@ -4,10 +4,13 @@
 
 class Trading
 {
-	StockOrders& stockOrders;
+	StockOrders* stockOrders_;
 
 public:
-	Trading(StockOrders& stockOrders);
+	Trading();
+	~Trading();
 	void MakeOrder(OrderData orderData);
 	void DeleteOrder(OrderData orderData);
+	void Print();
+	void OrderExecute();
 };

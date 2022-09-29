@@ -22,3 +22,22 @@ int Stock::Decrease(float price, int number)
 		return left;
 	}
 }
+
+Stock::Stock(std::string name)
+{
+	this->name = name;
+}
+
+
+void Stock::Print()
+{
+	if (priceToNumber.size() != 0)
+	{
+		printf("%s : ", name.c_str());
+		for (auto e : priceToNumber)
+		{
+			printf("[%f,%d], ", e.first, e.second);
+		}
+		printf("\n");
+	}
+}

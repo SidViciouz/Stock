@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="server.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="account.cpp">
@@ -43,6 +43,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="orderInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="message.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -75,6 +78,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="orderInfos.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="session.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="message.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

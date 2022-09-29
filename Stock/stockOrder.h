@@ -6,11 +6,14 @@
 class StockOrder
 {
 	std::string name;
-	Stock& stockToSell;
-	Stock& stockToBuy;
-	OrderInfos& orderInfosForSelling;
-	OrderInfos& orderInfosForBuying;
+	Stock* stockToSell;
+	Stock* stockToBuy;
+	OrderInfos* orderInfosForSelling;
+	OrderInfos* orderInfosForBuying;
 
 public:
 	void Make(OrderData orderData);
+	StockOrder(std::string name);
+	~StockOrder();
+	void Print();
 };

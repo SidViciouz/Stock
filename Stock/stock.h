@@ -9,6 +9,8 @@ class Stock
 	std::map<float, int> priceToNumber;
 
 public:
+	Stock(std::string name);
 	int Increase(float price, int number);
 	int Decrease(float price, int number);
+	void Print();
 };

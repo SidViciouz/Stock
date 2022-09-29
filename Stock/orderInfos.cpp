@@ -2,5 +2,13 @@
 
 void OrderInfos::Make(int orderOwner, int number)
 {
-	orderInfos.push_back(new OrderInfo(orderOwner, number));
+	orderInfos_.push_back(new OrderInfo(orderOwner, number));
+}
+
+void OrderInfos::Print()
+{
+	for (auto Info : orderInfos_)
+	{
+		Info->Print();
+	}
 }

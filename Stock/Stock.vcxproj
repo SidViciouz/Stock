@@ -24,6 +24,7 @@
     <ProjectGuid>{28abc9fb-79a9-4442-b433-3ccb168def01}</ProjectGuid>
     <RootNamespace>Stock</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>StockServer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -143,9 +144,10 @@
   <ItemGroup>
     <ClCompile Include="account.cpp" />
     <ClCompile Include="accounts.cpp" />
+    <ClCompile Include="message.cpp" />
     <ClCompile Include="orderInfo.cpp" />
     <ClCompile Include="orderInfos.cpp" />
-    <ClCompile Include="server.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="stock.cpp" />
     <ClCompile Include="stockOrder.cpp" />
     <ClCompile Include="stockOrders.cpp" />
@@ -156,8 +158,11 @@
     <ClInclude Include="account.h" />
     <ClInclude Include="accounts.h" />
     <ClInclude Include="data.h" />
+    <ClInclude Include="message.h" />
     <ClInclude Include="orderInfo.h" />
     <ClInclude Include="orderInfos.h" />
+    <ClInclude Include="server.h" />
+    <ClInclude Include="session.h" />
     <ClInclude Include="stock.h" />
     <ClInclude Include="stockOrder.h" />
     <ClInclude Include="stockOrders.h" />
