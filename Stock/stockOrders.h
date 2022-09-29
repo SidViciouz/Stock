@@ -10,4 +10,5 @@ class StockOrders
 public:
 	void Make(OrderData orderData);
 	void Print();
+	void Execute();
 };

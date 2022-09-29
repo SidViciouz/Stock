@@ -13,4 +13,6 @@ public:
 	int Increase(float price, int number);
 	int Decrease(float price, int number);
 	void Print();
+	std::map<float,int>::iterator GetPriceToNumberBegin();
+	std::map<float, int>::iterator GetPriceToNumberEnd();
 };

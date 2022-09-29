@@ -41,3 +41,13 @@ void Stock::Print()
 		printf("\n");
 	}
 }
+
+std::map<float, int>::iterator Stock::GetPriceToNumberBegin()
+{
+	return priceToNumber.begin();
+}
+
+std::map<float, int>::iterator Stock::GetPriceToNumberEnd()
+{
+	return priceToNumber.end();
+}

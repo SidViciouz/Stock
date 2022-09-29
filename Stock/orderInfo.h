@@ -10,4 +10,5 @@ public:
 	OrderInfo() = delete;
 	OrderInfo(int orderOwner, int number);
 	void Print();
+	int Decrease(int number);
 };

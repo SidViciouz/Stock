@@ -38,6 +38,7 @@ public:
         {
             // processiong data_
             OrderData orderData_ = Message::GetOrderData(data_);
+            trading_.OrderExecute();
 
             trading_.MakeOrder(orderData_);
             trading_.Print();

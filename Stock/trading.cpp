@@ -26,7 +26,7 @@ void Trading::Print()
 
 void Trading::OrderExecute()
 {
-
+	stockOrders_->Execute();
 }
 
 

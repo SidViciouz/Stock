@@ -16,4 +16,5 @@ public:
 	StockOrder(std::string name);
 	~StockOrder();
 	void Print();
+	void Execute();
 };

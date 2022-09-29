@@ -9,4 +9,5 @@ class OrderInfos
 public:
 	void Make(int orderOwner, int number);
 	void Print();
+	void Decrease(int number);
 };

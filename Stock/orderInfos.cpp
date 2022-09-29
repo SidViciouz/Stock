@@ -12,3 +12,14 @@ void OrderInfos::Print()
 		Info->Print();
 	}
 }
+
+void OrderInfos::Decrease(int number)
+{
+	for (auto Info : orderInfos_)
+	{
+		//ÃÑ ÇÕÇØ¼­ number¸¸Å­ Decrease
+		number = Info->Decrease(number);
+		if (number == 0)
+			break;
+	}
+}

@@ -10,3 +10,18 @@ void OrderInfo::Print()
 {
 	printf("owner : %d, number : %d\n", orderOwner, number);
 }
+
+int OrderInfo::Decrease(int number)
+{
+	if (this->number > number)
+	{
+		this->number -= number;
+		return 0;
+	}
+	else
+	{
+		number -= this->number;
+		this->number = 0;
+		return number;
+	}
+}

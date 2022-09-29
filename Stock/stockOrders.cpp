@@ -17,3 +17,11 @@ void StockOrders::Print()
 		stockOrder_.second->Print();
 	}
 }
+
+void StockOrders::Execute()
+{
+	for (auto stockOrder_ : stockOrders_)
+	{
+		stockOrder_.second->Execute();
+	}
+}
