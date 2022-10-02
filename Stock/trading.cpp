@@ -1,6 +1,7 @@
 #include "trading.h"
 
-Trading::Trading()
+Trading::Trading(Accounts& accounts_):
+	accounts_{accounts_}
 {
 	stockOrders_ = new StockOrders();
 }
@@ -11,7 +12,10 @@ Trading::~Trading()
 
 void Trading::MakeOrder(OrderData orderData)
 {
-	stockOrders_->Make(orderData);
+	if (accounts_.CanAfford(orderData))
+	{
+		stockOrders_->Make(orderData);
+	}
 }
 
 void Trading::DeleteOrder(OrderData orderData)

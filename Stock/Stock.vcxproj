@@ -158,6 +158,7 @@
     <ClInclude Include="account.h" />
     <ClInclude Include="accounts.h" />
     <ClInclude Include="data.h" />
+    <ClInclude Include="execute.h" />
     <ClInclude Include="message.h" />
     <ClInclude Include="orderInfo.h" />
     <ClInclude Include="orderInfos.h" />

@@ -53,10 +53,12 @@ void StockOrder::Execute()
 		for (auto jt = stockToSell->GetPriceToNumberBegin();
 			jt != stockToSell->GetPriceToNumberEnd();)
 		{
-			if (fabs(it->first-jt->first) < 0.00001)
+			if (fabs(it->first-jt->first) < 0.001)
 			{
 				printf("Transaction Executed!!!\n");
 				int smaller = it->second < jt->second ? it->second : jt->second;
+
+				//거래될 수 있는지 다시 check. (수정1)
 
 				//더 작은 것 만큼 decrease.
 				it = stockToBuy->Decrease(it->first, smaller);
@@ -65,6 +67,9 @@ void StockOrder::Execute()
 				//orderInfosForBuying and selling에서도 개수 맞게 차감.
 				orderInfosForBuying->Decrease(smaller);
 				orderInfosForSelling->Decrease(smaller);
+
+				//orderInfos에서 거래 당사자들의 계좌를 얻은 후에 (decrease에서 배열 또는 벡터로 반환하게 해야함) (수정2)
+				//accounts에서 minus, add 해줌. (수정3)
 
 				Executed = true;
 

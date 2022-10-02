@@ -15,4 +15,5 @@ public:
 	void Print();
 	std::map<float,int>::iterator GetPriceToNumberBegin();
 	std::map<float, int>::iterator GetPriceToNumberEnd();
+	int GetPriceToNumber(float price);
 };

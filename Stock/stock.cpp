@@ -58,3 +58,8 @@ std::map<float, int>::iterator Stock::GetPriceToNumberEnd()
 {
 	return priceToNumber.end();
 }
+
+int Stock::GetPriceToNumber(float price)
+{
+	return priceToNumber[price];
+}
