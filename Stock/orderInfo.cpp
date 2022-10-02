@@ -16,7 +16,7 @@ int OrderInfo::Decrease(int number)
 	if (this->number > number)
 	{
 		this->number -= number;
-		return 0;
+		return -1;
 	}
 	else
 	{

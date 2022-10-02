@@ -7,20 +7,27 @@ int Stock::Increase(float price, int number)
 	return number;
 }
 
-int Stock::Decrease(float price, int number)
+std::map<float,int>::iterator Stock::Decrease(float price, int number)
 {
 	int left = priceToNumber[price];
+	auto it = priceToNumber.find(price);
 
 	if (left > number)
 	{
 		priceToNumber[price] -= number;
-		return number;
+		it++;
+
+		return it;
 	}
 	else
 	{
-		priceToNumber[price] = 0;
-		return left;
+		priceToNumber.erase(it++);
+		//priceToNumber[price] = 0;
+		return it;
 	}
+
+	//거래가 체결되면 이 함수가 실행되므로 주식이 0이 되면 
+	//priceToNumber에서 해당 price를 지워주는 것도 여기서 해야함.
 }
 
 Stock::Stock(std::string name)

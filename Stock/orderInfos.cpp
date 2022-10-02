@@ -15,11 +15,22 @@ void OrderInfos::Print()
 
 void OrderInfos::Decrease(int number)
 {
-	for (auto Info : orderInfos_)
+
+	for (auto it = orderInfos_.begin(); it != orderInfos_.end(); )
 	{
-		//총 합해서 number만큼 Decrease
-		number = Info->Decrease(number);
-		if (number == 0)
+		number = (*it)->Decrease(number);
+		if (number == -1)
 			break;
+		else if(number == 0)
+		{
+			delete (*it);
+			orderInfos_.erase(it);
+			break;
+		}
+		else
+		{
+			delete (*it);
+			it = orderInfos_.erase(it);
+		}
 	}
 }
