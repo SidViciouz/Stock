@@ -7,12 +7,12 @@ void StockOrder::Make(OrderData orderData)
 	if (orderData.deal == BUY)
 	{
 		stockToBuy->Increase(orderData.price, orderData.number);
-		orderInfosForBuying->Make(orderData.accountNumber, orderData.number);
+		orderInfosForBuying->Make(orderData.accountNumber,orderData.price, orderData.number);
 	}
 	else
 	{
 		stockToSell->Increase(orderData.price, orderData.number);
-		orderInfosForSelling->Make(orderData.accountNumber, orderData.number);
+		orderInfosForSelling->Make(orderData.accountNumber,orderData.price, orderData.number);
 	}
 }
 
@@ -66,11 +66,23 @@ void StockOrder::Execute()
 				jt = stockToSell->Decrease(jt->first, smaller);
 
 				//orderInfosForBuying and selling에서도 개수 맞게 차감.
-				orderInfosForBuying->Decrease(smaller);
-				orderInfosForSelling->Decrease(smaller);
-
 				//orderInfos에서 거래 당사자들의 계좌를 얻은 후에 (decrease에서 배열 또는 벡터로 반환하게 해야함) (수정2)
+				std::vector<OrderData> buyerDatas = orderInfosForBuying->Decrease(smaller);
+				std::vector<OrderData> sellerDatas = orderInfosForSelling->Decrease(smaller);
+
 				//accounts에서 minus, add 해줌. (수정3)
+				for (auto buyerData : buyerDatas)
+				{
+					accounts_.Minus(buyerData.accountNumber, buyerData.price * buyerData.number);
+					accounts_.Add(buyerData.accountNumber,name,buyerData.number);
+				}
+
+				for (auto sellerData : sellerDatas)
+				{
+					accounts_.Add(sellerData.accountNumber,sellerData.price * sellerData.number);
+					accounts_.Minus(sellerData.accountNumber,name,sellerData.number);
+				}
+
 
 				Executed = true;
 

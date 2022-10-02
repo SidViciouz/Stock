@@ -1,8 +1,9 @@
 #include "orderInfo.h"
 
-OrderInfo::OrderInfo(int orderOwner, int number)
+OrderInfo::OrderInfo(int orderOwner,float price, int number)
 {
 	this->orderOwner = orderOwner;
+	this->price = price;
 	this->number = number;
 }
 
@@ -24,4 +25,14 @@ int OrderInfo::Decrease(int number)
 		this->number = 0;
 		return number;
 	}
+}
+
+int OrderInfo::GetOrderOwner()
+{
+	return orderOwner;
+}
+
+float OrderInfo::GetPrice()
+{
+	return price;
 }
