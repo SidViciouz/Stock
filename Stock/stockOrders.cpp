@@ -1,10 +1,16 @@
 #include "stockOrders.h"
 
+StockOrders::StockOrders(Accounts& accounts_):
+	accounts_{accounts_}
+{
+
+}
+
 void StockOrders::Make(OrderData orderData)
 {
 	if (stockOrders_.find(orderData.name) == stockOrders_.end())
 	{
-		stockOrders_.insert({ orderData.name,new StockOrder(orderData.name)}); // 攫力 昏力?
+		stockOrders_.insert({ orderData.name,new StockOrder(orderData.name,accounts_)}); // 攫力 昏力?
 	}
 
 	stockOrders_[orderData.name]->Make(orderData);

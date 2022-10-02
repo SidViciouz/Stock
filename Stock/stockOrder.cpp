@@ -16,7 +16,8 @@ void StockOrder::Make(OrderData orderData)
 	}
 }
 
-StockOrder::StockOrder(std::string name)
+StockOrder::StockOrder(std::string name, Accounts& accounts_):
+	accounts_{accounts_}
 {
 	this->name = name;
 	stockToBuy = new Stock(name);

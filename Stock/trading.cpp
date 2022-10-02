@@ -3,7 +3,7 @@
 Trading::Trading(Accounts& accounts_):
 	accounts_{accounts_}
 {
-	stockOrders_ = new StockOrders();
+	stockOrders_ = new StockOrders(accounts_);
 }
 Trading::~Trading()
 {
