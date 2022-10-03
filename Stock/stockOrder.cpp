@@ -83,7 +83,6 @@ void StockOrder::Execute()
 					accounts_.Minus(sellerData.accountNumber,name,sellerData.number);
 				}
 
-
 				Executed = true;
 
 				break;

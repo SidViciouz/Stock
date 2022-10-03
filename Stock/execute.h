@@ -25,7 +25,6 @@ public:
     {
         if (!error)
         {
-            //printf("timer handler executed!\n");
             trading_.OrderExecute();
             trading_.Print();
             timer.expires_at(std::chrono::steady_clock::now() + std::chrono::seconds(1));
