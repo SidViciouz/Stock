@@ -5,7 +5,8 @@
 enum DEAL
 {
 	BUY,
-	SELL
+	SELL,
+	SHOW
 };
 
 struct OrderData

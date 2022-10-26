@@ -34,7 +34,7 @@ void Account::Deposit(float cash)
 void Account::Print()
 {
 	printf("Account Number : %d\n", accountNumber);
-	printf("Cash : %d\n", cash);
+	//printf("Cash : %d\n", cash);
 	stocks.Print();
 	printf("\n");
 }

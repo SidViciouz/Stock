@@ -16,6 +16,12 @@ OrderData Message::GetOrderData(char* message)
 
 	if (result.size() != 5)
 	{
+		if (result.size() == 1)
+		{
+			if (result[0] == "SHOW")
+				orderData_.deal = SHOW;
+		}
+
 		return orderData_;
 	}
 

@@ -33,4 +33,8 @@ void Trading::OrderExecute()
 	stockOrders_->Execute();
 }
 
+void Trading::PrintAccount()
+{
+	accounts_.Print();
+}
 

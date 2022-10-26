@@ -16,4 +16,5 @@ public:
 	void DeleteOrder(OrderData orderData);
 	void Print();
 	void OrderExecute();
+	void PrintAccount();
 };

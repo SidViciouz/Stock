@@ -21,9 +21,9 @@ public:
     {
         //
         accounts_.Add(12345, 100000);
-        accounts_.Add(12345, "samsung", 100);
+        accounts_.Add(12345, "ABC", 100);
         accounts_.Add(11111, 200000);
-        accounts_.Add(11111, "LG", 300);
+        accounts_.Add(11111, "DEF", 300);
         //
         Execute* execute_ = new Execute(io_service, trading_);
         execute_->start();

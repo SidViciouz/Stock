@@ -36,10 +36,19 @@ StockOrder::~StockOrder()
 
 void StockOrder::Print()
 {
+	printf("[buy order]\n");
 	stockToBuy->Print();
+	printf("\n");
+	printf("[sell order]\n");
 	stockToSell->Print();
+	printf("\n");
+	printf("[buyer information]\n");
 	orderInfosForBuying->Print();
+	printf("\n");
+	printf("[seller information]\n");
 	orderInfosForSelling->Print();
+	printf("\n");
+	printf("--------------------------------------------");
 	printf("\n");
 }
 

@@ -59,6 +59,7 @@ void Accounts::Print()
 	{
 		account.second->Print();
 	}
+	printf("--------------------------------------------\n");
 }
 
 bool Accounts::CanAfford(OrderData orderData)

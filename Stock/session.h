@@ -37,8 +37,16 @@ public:
         if (!error)
         {
             OrderData orderData_ = Message::GetOrderData(data_);
-            trading_.MakeOrder(orderData_);
-            trading_.Print();
+            if (orderData_.deal == SHOW)
+            {
+                // show account
+                trading_.PrintAccount();
+            }
+            else
+            {
+                trading_.MakeOrder(orderData_);
+                trading_.Print();
+            }
 
             boost::asio::async_write(socket_,
                 boost::asio::buffer(data_, bytes_transferred),
